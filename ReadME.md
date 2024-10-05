@@ -1,6 +1,3 @@
-Here’s the complete README for your script, formatted for GitHub, with only the code snippets included for easy copying:
-
----
 
 # WordPress-Automatic-Email-Testing-With-Telegram-Advanced-Alerts-Serverside
 
