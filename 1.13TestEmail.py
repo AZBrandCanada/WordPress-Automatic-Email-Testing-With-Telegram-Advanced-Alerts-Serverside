@@ -3,13 +3,28 @@ import time
 import requests
 from datetime import datetime, timedelta
 
-# List of log file URLs Enter as many websites as you want!
+# List of log file URLs and corresponding website URLs
 log_files = {
-    "AZbrand.ca": "http://test.azbrand.ca/wp-content/plugins/AutomaticEmailLog/emaillog.txt",
-    "examplesite.ca": "https://examplesite.ca/htdocs/wp-content/plugins/AutomaticEmailLog/emaillog.txt",
-    "examplesite.ca": "https://examplesite.ca/htdocs/wp-content/plugins/AutomaticEmailLog/emaillog.txt",
-    "examplesite.ca": "https://examplesite.ca/htdocs/wp-content/plugins/AutomaticEmailLog/emaillog.txt",
-    "examplesite.ca": "https://examplesite.ca/htdocs/wp-content/plugins/AutomaticEmailLog/emaillog.txt"
+    "AZbrand.ca": {
+        "log_url": "https://sample.ca/wp-content/plugins/AutomaticEmailLog/emaillog.txt",
+        "site_url": "https://sample.ca"
+    },
+    "LandgrafLawnCare.ca": {
+        "log_url": "https://landgraflawncare.ca/wp-content/plugins/AutomaticEmailLognopage/emaillog.txt",
+        "site_url": "https://landgraflawncare.ca"
+    },
+    "BeGreenLawnCare.ca": {
+        "log_url": "https://sample.ca/wp-content/plugins/AutomaticEmailLognopage/emaillog.txt",
+        "site_url": "https://sample.ca"
+    },
+    "HerbsWithRobyn.com": {
+        "log_url": "https://herbswithrobyn.com/wp-content/plugins/AutomaticEmailLognopage/emaillog.txt",
+        "site_url": "https://sample.ca"
+    },
+    "DennisSimsek.com": {
+        "log_url": "https://dennissimsek.com/wp-content/plugins/AutomaticEmailLognopage/emaillog.txt",
+        "site_url": "https://sample.ca"
+    }
 }
 
 # Telegram Bot credentials
@@ -42,7 +57,8 @@ def fetch_log_file(url):
 def check_log_files(log_files):
     statuses = {}  # Dictionary to hold the status of each log file
 
-    for site, log_url in log_files.items():
+    for site, info in log_files.items():
+        log_url = info["log_url"]
         lines = fetch_log_file(log_url)
         if lines is not None:
             if lines:  # Check if the log file has any entries
@@ -85,7 +101,22 @@ def send_status_update(statuses):
         status_message += f"{site}: {status}\n"
     send_telegram_message(status_message)
 
+def visit_websites(log_files):
+    for site, info in log_files.items():
+        site_url = info["site_url"]
+        try:
+            response = requests.get(site_url)
+            if response.status_code == 200:
+                print(f"Successfully loaded {site_url} for {site}")
+            else:
+                print(f"Failed to load {site_url} for {site}: {response.status_code}")
+        except Exception as e:
+            print(f"Error loading {site_url} for {site}: {e}")
+
 if __name__ == "__main__":
+    # Send initial startup message
+    send_telegram_message("Script has started and is now monitoring email services.")
+
     last_status_time = None
 
     while True:
@@ -104,6 +135,11 @@ if __name__ == "__main__":
             time_until_next_check = (next_check_time - current_time).total_seconds()
             print(f"Next status update at {next_check_time.strftime('%Y-%m-%d %H:%M:%S')} (in {int(time_until_next_check // 60)} minutes and {int(time_until_next_check % 60)} seconds)")
 
+        # Visit each website to trigger cron jobs
+        visit_websites(log_files)
+        print("Waiting for 3 minutes to allow crons to run...")
+        time.sleep(180)  # Wait for 3 minutes
+
         statuses = check_log_files(log_files)
         
         # Check if there are any down statuses
@@ -112,7 +148,7 @@ if __name__ == "__main__":
             for site, status in statuses.items():
                 alert_message += f"{site}: {status}\n"
             send_telegram_message(alert_message)
-            time.sleep(5)  # Wait for 5 seconds before the next check
+            time.sleep(20)  # Wait for 20 seconds before the next check
         else:
             print("All services are up. Waiting for the next check.")
             time.sleep(3600)  # Wait for an hour before checking again
