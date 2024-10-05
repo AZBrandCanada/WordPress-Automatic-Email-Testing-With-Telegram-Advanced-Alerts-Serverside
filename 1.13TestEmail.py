@@ -5,11 +5,11 @@ from datetime import datetime, timedelta
 
 # List of log file URLs Enter as many websites as you want!
 log_files = {
-    "AZbrand.ca": "http://test.azbrand.ca/wp-content/plugins/emaillogger/emaillog.txt",
-    "examplesite.ca": "https://examplesite.ca/htdocs/wp-content/plugins/emaillogger/emaillog.txt",
-    "examplesite.ca": "https://examplesite.ca/htdocs/wp-content/plugins/emaillogger/emaillog.txt",
-    "examplesite.ca": "https://examplesite.ca/htdocs/wp-content/plugins/emaillogger/emaillog.txt",
-    "examplesite.ca": "https://examplesite.ca/htdocs/wp-content/plugins/emaillogger/emaillog.txt"
+    "AZbrand.ca": "http://test.azbrand.ca/wp-content/plugins/AutomaticEmailLog/emaillog.txt",
+    "examplesite.ca": "https://examplesite.ca/htdocs/wp-content/plugins/AutomaticEmailLog/emaillog.txt",
+    "examplesite.ca": "https://examplesite.ca/htdocs/wp-content/plugins/AutomaticEmailLog/emaillog.txt",
+    "examplesite.ca": "https://examplesite.ca/htdocs/wp-content/plugins/AutomaticEmailLog/emaillog.txt",
+    "examplesite.ca": "https://examplesite.ca/htdocs/wp-content/plugins/AutomaticEmailLog/emaillog.txt"
 }
 
 # Telegram Bot credentials
