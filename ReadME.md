@@ -34,7 +34,7 @@ https://github.com/AZBrandCanada/Wordpress-Automatic-Email-Testing-With-Telegram
    - Open the script file.
    - In the `log_files` dictionary, you can add as many websites as you want. Each entry should follow the format:
      ```
-     "Website Name": "http://example.com/path/to/emaillog.txt"
+     "Website Name": "http://example.com/wp-content/plugins/emaillogger/emaillog.txt"
      ```
    - For example:
      ```
