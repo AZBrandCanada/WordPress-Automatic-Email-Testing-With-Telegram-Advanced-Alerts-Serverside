@@ -7,6 +7,8 @@ Here’s the complete README for your script, formatted for GitHub, with only th
 ## Overview
 
 This Python script is designed to monitor the email logs of various WordPress sites, checking their status and notifying you via Telegram if any issues are detected. It can automatically check the logs for specified websites and send alerts if any failures occur.
+This Monitor Works In Conjunction With The Wordpress Plugin 
+https://github.com/AZBrandCanada/Wordpress-Automatic-Email-Testing-With-Telegram-Alerts
 
 ## Features
 
