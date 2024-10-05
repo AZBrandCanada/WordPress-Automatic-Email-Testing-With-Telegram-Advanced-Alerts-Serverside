@@ -1,4 +1,4 @@
-Here's the updated README with instructions on how to add the script to system services:
+Here's the README with only the code snippets in code blocks for easy copying:
 
 ```
 # WordPress-Automatic-Email-Testing-With-Telegram-Advanced-Alerts-Serverside
@@ -29,12 +29,12 @@ Setup Instructions
 
 2. Configure Log Files:
    - Open the script file.
-   - In the log_files dictionary, you can add as many websites as you want. Each entry should follow the format:
-     ```
+   - In the `log_files` dictionary, you can add as many websites as you want. Each entry should follow the format:
+     ```python
      "Website Name": "http://example.com/path/to/emaillog.txt"
      ```
    - For example:
-     ```
+     ```python
      log_files = {
          "AZbrand.ca": "http://test.azbrand.ca/wp-content/plugins/emaillogger/emaillog.txt",
          "ExampleSite.ca": "https://examplesite.ca/htdocs/wp-content/plugins/emaillogger/emaillog.txt"
@@ -43,22 +43,22 @@ Setup Instructions
 
 3. Set Up Telegram Bot:
    - Create a new bot on Telegram by talking to BotFather.
-   - After creating your bot, you'll receive a bot token. Replace bot_token in the script with your bot's token:
-     ```
+   - After creating your bot, you'll receive a bot token. Replace `bot_token` in the script with your bot's token:
+     ```python
      bot_token = "YOUR_BOT_TOKEN"
      ```
    - To find your chat ID, you can send a message to your bot and then access the following URL in your web browser:
-     ```
+     ```plaintext
      https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates
      ```
-   - Look for the "chat": {"id": ...} section in the response and use this value to set channel_id in the script:
-     ```
+   - Look for the "chat": {"id": ...} section in the response and use this value to set `channel_id` in the script:
+     ```python
      channel_id = "YOUR_CHAT_ID"
      ```
 
 4. Run the Script:
    - Execute the script using Python:
-     ```
+     ```bash
      python WordPress-Automatic-Email-Testing-With-Telegram-Advanced-Alerts-Serverside.py
      ```
 
@@ -68,7 +68,7 @@ To ensure the script runs continuously and restarts automatically on system rebo
 
 1. Create a Service File:
    - Open a terminal and create a new service file:
-     ```
+     ```bash
      sudo nano /etc/systemd/system/email-monitor.service
      ```
 
@@ -92,14 +92,14 @@ To ensure the script runs continuously and restarts automatically on system rebo
 
 3. Enable and Start the Service:
    - Run the following commands to enable and start the service:
-     ```
+     ```bash
      sudo systemctl enable email-monitor.service
      sudo systemctl start email-monitor.service
      ```
 
 4. Check the Service Status:
    - You can check if the service is running with:
-     ```
+     ```bash
      sudo systemctl status email-monitor.service
      ```
 
@@ -136,4 +136,4 @@ Upgrade Notice
 - This update removes email from the public log for enhanced privacy and security.
 ```
 
-This version includes detailed instructions on how to add the script to system services on a Linux machine. Let me know if you need any further adjustments!
+This version contains only the essential code snippets in code blocks, making it easier to copy and paste. Let me know if you need any further adjustments!
