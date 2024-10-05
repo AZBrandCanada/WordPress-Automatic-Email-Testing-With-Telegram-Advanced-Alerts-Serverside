@@ -1,3 +1,6 @@
+Here's the updated README with instructions on how to add the script to system services:
+
+```
 # WordPress-Automatic-Email-Testing-With-Telegram-Advanced-Alerts-Serverside
 
 Overview
@@ -59,6 +62,47 @@ Setup Instructions
      python WordPress-Automatic-Email-Testing-With-Telegram-Advanced-Alerts-Serverside.py
      ```
 
+Adding to System Services (Linux)
+
+To ensure the script runs continuously and restarts automatically on system reboots, you can add it to your system services. Here’s how to do it using `systemd`:
+
+1. Create a Service File:
+   - Open a terminal and create a new service file:
+     ```
+     sudo nano /etc/systemd/system/email-monitor.service
+     ```
+
+2. Add the Following Configuration:
+   ```ini
+   [Unit]
+   Description=WordPress Email Monitor
+
+   [Service]
+   ExecStart=/usr/bin/python3 /path/to/WordPress-Automatic-Email-Testing-With-Telegram-Advanced-Alerts-Serverside.py
+   WorkingDirectory=/path/to/
+   StandardOutput=journal
+   StandardError=journal
+   Restart=always
+
+   [Install]
+   WantedBy=multi-user.target
+   ```
+
+   - Make sure to replace `/path/to/` with the actual path where your script is located.
+
+3. Enable and Start the Service:
+   - Run the following commands to enable and start the service:
+     ```
+     sudo systemctl enable email-monitor.service
+     sudo systemctl start email-monitor.service
+     ```
+
+4. Check the Service Status:
+   - You can check if the service is running with:
+     ```
+     sudo systemctl status email-monitor.service
+     ```
+
 Monitoring Logic
 
 - The script checks the status of the specified log files every 5 minutes.
@@ -90,3 +134,6 @@ Upgrade Notice
 
 1.7.15
 - This update removes email from the public log for enhanced privacy and security.
+```
+
+This version includes detailed instructions on how to add the script to system services on a Linux machine. Let me know if you need any further adjustments!
