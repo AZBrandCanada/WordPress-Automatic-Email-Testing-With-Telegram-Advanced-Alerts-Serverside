@@ -6,23 +6,23 @@ from datetime import datetime, timedelta
 # List of log file URLs and corresponding website URLs
 log_files = {
     "AZbrand.ca": {
-        "log_url": "https://sample.ca/wp-content/plugins/AutomaticEmailTesterAZBrand/emaillog.txt",
+        "log_url": "https://sample.ca/wp-content/plugins/automatic-email-testing-with-telegram-alerts/emaillog.txt",
         "site_url": "https://sample.ca"
     },
     "LandgrafLawnCare.ca": {
-        "log_url": "https://landgraflawncare.ca/wp-content/plugins/AutomaticEmailTesterAZBrand/emaillog.txt",
+        "log_url": "https://landgraflawncare.ca/wp-content/plugins/automatic-email-testing-with-telegram-alerts/emaillog.txt",
         "site_url": "https://landgraflawncare.ca"
     },
     "BeGreenLawnCare.ca": {
-        "log_url": "https://sample.ca/wp-content/plugins/AutomaticEmailTesterAZBrand/emaillog.txt",
+        "log_url": "https://sample.ca/wp-content/plugins/automatic-email-testing-with-telegram-alerts/emaillog.txt",
         "site_url": "https://sample.ca"
     },
     "HerbsWithRobyn.com": {
-        "log_url": "https://herbswithrobyn.com/wp-content/plugins/AutomaticEmailTesterAZBrand/emaillog.txt",
+        "log_url": "https://herbswithrobyn.com/wp-content/plugins/automatic-email-testing-with-telegram-alerts/emaillog.txt",
         "site_url": "https://sample.ca"
     },
     "DennisSimsek.com": {
-        "log_url": "https://dennissimsek.com/wp-content/plugins/AutomaticEmailTesterAZBrand/emaillog.txt",
+        "log_url": "https://dennissimsek.com/wp-content/plugins/automatic-email-testing-with-telegram-alerts/emaillog.txt",
         "site_url": "https://sample.ca"
     }
 }
