@@ -4,7 +4,8 @@ import requests
 from datetime import datetime, timedelta
 
 # List of log file URLs and corresponding website URLs
-#the site_url is to trigger cron on your wordpress website site to run an email check if your website has low traffic.. it doesnt have to be wp-admin page but it does have to be a page with no caching. 
+#the site_url is to trigger cron on your wordpress website site to run an email check if your website has low traffic..
+#it doesnt have to be wp-admin page but it does have to be a page with no caching. 
 log_files = {
     "sample.ca": {
         "log_url": "https://sample.ca/wp-content/plugins/automatic-email-testing-with-telegram-alerts/emaillog.txt",
