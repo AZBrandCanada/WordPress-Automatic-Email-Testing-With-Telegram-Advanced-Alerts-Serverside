@@ -59,7 +59,7 @@ https://github.com/AZBrandCanada/Wordpress-Automatic-Email-Testing-With-Telegram
 4. **Run the Script**:
    - Execute the script using Python:
      ```
-     python WordPress-Automatic-Email-Testing-With-Telegram-Advanced-Alerts-Serverside.py
+     python3 1.13TestEmail.py
      ```
 
 ## Adding to System Services (Linux)
@@ -78,7 +78,7 @@ To ensure the script runs continuously and restarts automatically on system rebo
    Description=WordPress Email Monitor
 
    [Service]
-   ExecStart=/usr/bin/python3 /path/to/WordPress-Automatic-Email-Testing-With-Telegram-Advanced-Alerts-Serverside.py
+   ExecStart=/usr/bin/python3 /path/to/1.13TestEmail.py
    WorkingDirectory=/path/to/
    StandardOutput=journal
    StandardError=journal
