@@ -12,8 +12,8 @@ https://github.com/AZBrandCanada/Wordpress-Automatic-Email-Testing-With-Telegram
 - Monitor email logs from multiple WordPress sites.
 - Send Telegram notifications on email failures.
 - Check log files every 5 minutes.
-- Alert every 5 seconds if:
-  - A log file is older than 1 hour.
+- Alert every 10 minutes if:
+  - A log file is older than 8 hours.
   - An email send fails.
   - A log file is missing or empty.
 - Easy to add or remove websites from monitoring.
