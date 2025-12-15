@@ -89,6 +89,37 @@ To ensure the script runs continuously and restarts automatically on system rebo
    ```
 
 ## Changelog
+= 1.8.13 =
+* Admin Styling
+
+= 1.8.12 =
+* Fixed Null Variable
+* Fixed Performance Degredation
+
+= 1.8.1 =
+* Tested Wordpress 6.9
+* Provided Legacy Support for PHP 7.3
+
+= 1.7.19 =
+* Updated JavaScript to correctly calculate the time difference between current UTC time and next email send time.
+* Added a clear indication when an email is currently being sent.
+* Improved the display format of current time and countdown timer.
+* Added custom classes for HTML and JavaScript elements.
+
+= 1.7.18 =
+* Improved internationalization: avoided using variables or defines as text, context, or text domain parameters.
+* Documented use of third-party API (api.telegram.org).
+* Updated to use `wp_enqueue` commands for better script management.
+* Created unique prefixes for generic function/class/define/namespace/option names.
+* Updated transient prefixes.
+
+= 1.7.17 =
+* Added new functionality to handle edge cases in email scheduling.
+* Improved error logging for better diagnostics.
+* Enhanced security features to protect against potential vulnerabilities.
+
+= 1.7.16 =
+* Updated the license information to include CC BY-ND 4.0 details.
 
 = 1.7.15 =
 Removed email from the public log.
