@@ -26,8 +26,12 @@ https://github.com/AZBrandCanada/Wordpress-Automatic-Email-Testing-With-Telegram
 ## Setup Instructions
 
 1. **Clone the Repository**: Download the script to your server or local machine.
+   ```
+     git clone https://github.com/AZBrandCanada/WordPress-Automatic-Email-Testing-With-Telegram-Advanced-Alerts-Serverside.git
+     ```
+  
 
-2. **Configure Log Files**:
+3. **Configure Log Files**:
    - Open the script file.
    - In the `log_files` dictionary, you can add as many websites as you want. Each entry should follow the format:
      ```
@@ -41,7 +45,7 @@ https://github.com/AZBrandCanada/Wordpress-Automatic-Email-Testing-With-Telegram
      }
      ```
 
-3. **Set Up Telegram Bot**:
+4. **Set Up Telegram Bot**:
    - Create a new bot on Telegram by talking to BotFather.
    - After creating your bot, you'll receive a bot token. Replace `bot_token` in the script with your bot's token:
      ```
@@ -56,7 +60,7 @@ https://github.com/AZBrandCanada/Wordpress-Automatic-Email-Testing-With-Telegram
      channel_id = "YOUR_CHAT_ID"
      ```
 
-4. **Run the Script**:
+5. **Run the Script**:
    - Execute the script using Python:
      ```
      python3 1.13TestEmail.py
